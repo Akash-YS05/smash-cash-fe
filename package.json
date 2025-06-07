@@ -9,16 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@privy-io/react-auth": "^2.14.0",
+    "@privy-io/wagmi": "^1.0.3",
+    "@solana/wallet-adapter-base": "^0.9.26",
+    "@solana/wallet-adapter-react": "^0.15.38",
+    "@solana/wallet-adapter-react-ui": "^0.9.38",
+    "@solana/wallet-adapter-wallets": "^0.19.36",
+    "@solana/web3.js": "^1.98.2",
+    "lucide-react": "^0.513.0",
+    "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.3"
+    "react-hot-toast": "^2.5.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
