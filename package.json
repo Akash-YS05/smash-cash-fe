@@ -12,6 +12,7 @@
     "@coral-xyz/anchor": "^0.31.1",
     "@privy-io/react-auth": "^2.14.0",
     "@privy-io/wagmi": "^1.0.3",
+    "@project-serum/anchor": "^0.26.0",
     "@solana/spl-token": "^0.4.13",
     "@solana/wallet-adapter-base": "^0.9.26",
     "@solana/wallet-adapter-react": "^0.15.38",

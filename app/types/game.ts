@@ -11,7 +11,7 @@ export interface GameState {
     wallet: string;
     highScore: number;
     totalGames: number;
-    lastPlayed: number;
+    lastPlayed: string;
     bump: number;
   }
   
