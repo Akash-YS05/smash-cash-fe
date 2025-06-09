@@ -12,6 +12,7 @@
     "@coral-xyz/anchor": "^0.31.1",
     "@privy-io/react-auth": "^2.14.0",
     "@privy-io/wagmi": "^1.0.3",
+    "@solana/spl-token": "^0.4.13",
     "@solana/wallet-adapter-base": "^0.9.26",
     "@solana/wallet-adapter-react": "^0.15.38",
     "@solana/wallet-adapter-react-ui": "^0.9.38",
@@ -21,7 +22,8 @@
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.5.2"
+    "react-hot-toast": "^2.5.2",
+    "viem": "^2.30.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

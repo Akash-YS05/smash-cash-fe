@@ -1,338 +1,338 @@
 {
-    "address": "CTvpChrJqAhxAPQPMU2pJk8RcnzLwTJ5s7BJHftzS7vZ",
-    "metadata": {
-      "name": "tap_to_win",
-      "version": "0.1.0",
-      "spec": "0.1.0",
-      "description": "Created with Anchor"
-    },
-    "instructions": [
-      {
-        "name": "create_player",
-        "discriminator": [
-          19,
-          178,
-          189,
-          216,
-          159,
-          134,
-          0,
-          192
-        ],
-        "accounts": [
-          {
-            "name": "player",
-            "writable": true,
-            "pda": {
-              "seeds": [
-                {
-                  "kind": "const",
-                  "value": [
-                    112,
-                    108,
-                    97,
-                    121,
-                    101,
-                    114
-                  ]
-                },
-                {
-                  "kind": "account",
-                  "path": "authority"
-                }
-              ]
-            }
-          },
-          {
-            "name": "game_state",
-            "writable": true,
-            "pda": {
-              "seeds": [
-                {
-                  "kind": "const",
-                  "value": [
-                    103,
-                    97,
-                    109,
-                    101,
-                    95,
-                    115,
-                    116,
-                    97,
-                    116,
-                    101
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "name": "authority",
-            "writable": true,
-            "signer": true
-          },
-          {
-            "name": "system_program",
-            "address": "11111111111111111111111111111111"
-          }
-        ],
-        "args": []
-      },
-      {
-        "name": "get_leaderboard_info",
-        "discriminator": [
-          3,
-          46,
-          194,
-          177,
-          180,
-          146,
-          152,
-          250
-        ],
-        "accounts": [
-          {
-            "name": "game_state",
-            "pda": {
-              "seeds": [
-                {
-                  "kind": "const",
-                  "value": [
-                    103,
-                    97,
-                    109,
-                    101,
-                    95,
-                    115,
-                    116,
-                    97,
-                    116,
-                    101
-                  ]
-                }
-              ]
-            }
-          }
-        ],
-        "args": []
-      },
-      {
-        "name": "initialize",
-        "discriminator": [
-          175,
-          175,
-          109,
-          31,
-          13,
-          152,
-          155,
-          237
-        ],
-        "accounts": [
-          {
-            "name": "game_state",
-            "writable": true,
-            "pda": {
-              "seeds": [
-                {
-                  "kind": "const",
-                  "value": [
-                    103,
-                    97,
-                    109,
-                    101,
-                    95,
-                    115,
-                    116,
-                    97,
-                    116,
-                    101
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "name": "authority",
-            "writable": true,
-            "signer": true
-          },
-          {
-            "name": "system_program",
-            "address": "11111111111111111111111111111111"
-          }
-        ],
-        "args": []
-      },
-      {
-        "name": "submit_score",
-        "discriminator": [
-          212,
-          128,
-          45,
-          22,
-          112,
-          82,
-          85,
-          235
-        ],
-        "accounts": [
-          {
-            "name": "player",
-            "writable": true,
-            "pda": {
-              "seeds": [
-                {
-                  "kind": "const",
-                  "value": [
-                    112,
-                    108,
-                    97,
-                    121,
-                    101,
-                    114
-                  ]
-                },
-                {
-                  "kind": "account",
-                  "path": "authority"
-                }
-              ]
-            }
-          },
-          {
-            "name": "game_state",
-            "writable": true,
-            "pda": {
-              "seeds": [
-                {
-                  "kind": "const",
-                  "value": [
-                    103,
-                    97,
-                    109,
-                    101,
-                    95,
-                    115,
-                    116,
-                    97,
-                    116,
-                    101
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "name": "authority",
-            "signer": true
-          }
-        ],
-        "args": [
-          {
-            "name": "score",
-            "type": "u64"
-          }
-        ]
-      }
-    ],
-    "accounts": [
-      {
-        "name": "GameState",
-        "discriminator": [
-          144,
-          94,
-          208,
-          172,
-          248,
-          99,
-          134,
-          120
-        ]
-      },
-      {
-        "name": "Player",
-        "discriminator": [
-          205,
-          222,
-          112,
-          7,
-          165,
-          155,
-          206,
-          218
-        ]
-      }
-    ],
-    "errors": [
-      {
-        "code": 6000,
-        "name": "InvalidScore",
-        "msg": "Score must be greater than 0."
-      }
-    ],
-    "types": [
-      {
-        "name": "GameState",
-        "type": {
-          "kind": "struct",
-          "fields": [
-            {
-              "name": "authority",
-              "type": "pubkey"
-            },
-            {
-              "name": "total_players",
-              "type": "u64"
-            },
-            {
-              "name": "total_games",
-              "type": "u64"
-            },
-            {
-              "name": "top_score",
-              "type": "u64"
-            },
-            {
-              "name": "top_player",
-              "type": {
-                "option": "pubkey"
+  "address": "CTvpChrJqAhxAPQPMU2pJk8RcnzLwTJ5s7BJHftzS7vZ",
+  "metadata": {
+    "name": "tap_to_win",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "create_player",
+      "discriminator": [
+        19,
+        178,
+        189,
+        216,
+        159,
+        134,
+        0,
+        192
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
               }
-            },
-            {
-              "name": "bump",
-              "type": "u8"
-            }
-          ]
+            ]
+          }
+        },
+        {
+          "name": "game_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  97,
+                  109,
+                  101,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
         }
-      },
-      {
-        "name": "Player",
-        "type": {
-          "kind": "struct",
-          "fields": [
-            {
-              "name": "wallet",
-              "type": "pubkey"
-            },
-            {
-              "name": "total_games",
-              "type": "u64"
-            },
-            {
-              "name": "high_score",
-              "type": "u64"
-            },
-            {
-              "name": "last_played",
-              "type": "i64"
-            },
-            {
-              "name": "bump",
-              "type": "u8"
-            }
-          ]
+      ],
+      "args": []
+    },
+    {
+      "name": "get_leaderboard_info",
+      "discriminator": [
+        3,
+        46,
+        194,
+        177,
+        180,
+        146,
+        152,
+        250
+      ],
+      "accounts": [
+        {
+          "name": "game_state",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  97,
+                  109,
+                  101,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
         }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "game_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  97,
+                  109,
+                  101,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "submit_score",
+      "discriminator": [
+        212,
+        128,
+        45,
+        22,
+        112,
+        82,
+        85,
+        235
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "game_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  97,
+                  109,
+                  101,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "score",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "GameState",
+      "discriminator": [
+        144,
+        94,
+        208,
+        172,
+        248,
+        99,
+        134,
+        120
+      ]
+    },
+    {
+      "name": "Player",
+      "discriminator": [
+        205,
+        222,
+        112,
+        7,
+        165,
+        155,
+        206,
+        218
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidScore",
+      "msg": "Score must be greater than 0."
+    }
+  ],
+  "types": [
+    {
+      "name": "GameState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "total_players",
+            "type": "u64"
+          },
+          {
+            "name": "total_games",
+            "type": "u64"
+          },
+          {
+            "name": "top_score",
+            "type": "u64"
+          },
+          {
+            "name": "top_player",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "name": "Player",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "total_games",
+            "type": "u64"
+          },
+          {
+            "name": "high_score",
+            "type": "u64"
+          },
+          {
+            "name": "last_played",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}

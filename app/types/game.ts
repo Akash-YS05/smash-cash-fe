@@ -3,7 +3,7 @@ export interface GameState {
     totalPlayers: number;
     totalGames: number;
     topScore: number;
-    topPlayer?: string;
+    topPlayer?: string | null;
     bump: number;
   }
   
