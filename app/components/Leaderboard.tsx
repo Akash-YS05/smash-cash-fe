@@ -23,31 +23,31 @@ export function Leaderboard({ entries, currentPlayer, isLoading }: LeaderboardPr
   }
 
   const getRankStyle = (rank: number, isCurrentPlayer: boolean) => {
-    const baseStyle = "flex items-center justify-between p-4 rounded-lg transition-all duration-300 "
+    const baseStyle = "flex items-center justify-between p-4 transition-all duration-300 "
 
     if (isCurrentPlayer) {
-      return baseStyle + "bg-purple-700/40 border-2 border-purple-400/60 shadow-lg shadow-purple-500/20 transform scale-105"
+      return baseStyle + "bg-neutral-700/30 border border-neutral-600/60 transform scale-105"
     }
 
     switch (rank) {
       case 1:
-        return baseStyle + "bg-gradient-to-r from-amber-900/40 to-yellow-900/40 border border-amber-600/40 hover:border-amber-500/60"
+        return baseStyle + "bg-neutral-800/40 border border-neutral-700/40 hover:border-neutral-600/60"
       case 2:
-        return baseStyle + "bg-gradient-to-r from-slate-700/40 to-slate-800/40 border border-slate-600/40 hover:border-slate-500/60"
+        return baseStyle + "bg-neutral-800/30 border border-neutral-700/40 hover:border-neutral-600/60"
       case 3:
-        return baseStyle + "bg-gradient-to-r from-orange-900/40 to-amber-900/40 border border-orange-600/40 hover:border-orange-500/60"
+        return baseStyle + "bg-neutral-800/30 border border-neutral-700/40 hover:border-neutral-600/60"
       default:
-        return baseStyle + "bg-slate-800/30 border border-slate-700/40 hover:bg-slate-800/50 hover:border-slate-600/60"
+        return baseStyle + "bg-neutral-800/20 border border-neutral-700/30 hover:bg-neutral-800/30 hover:border-neutral-600/50"
     }
   }
 
   if (isLoading) {
     return (
-      <div className="bg-gradient-to-b from-slate-800/60 to-slate-900/60 backdrop-blur-xl rounded-xl p-8 border border-slate-700/50 shadow-2xl w-full max-w-sm">
+      <div className="bg-neutral-900/50 backdrop-blur-md border border-neutral-800/60 p-8 w-full max-w-sm">
         <div className="animate-pulse space-y-4">
-          <div className="h-8 bg-slate-700 rounded-lg"></div>
+          <div className="h-8 bg-neutral-700 rounded"></div>
           {[...Array(5)].map((_, i) => (
-            <div key={i} className="h-16 bg-slate-700 rounded-lg"></div>
+            <div key={i} className="h-16 bg-neutral-700 rounded"></div>
           ))}
         </div>
       </div>
@@ -55,22 +55,18 @@ export function Leaderboard({ entries, currentPlayer, isLoading }: LeaderboardPr
   }
 
   return (
-    <div className="bg-gradient-to-b from-slate-800/60 to-slate-900/60 backdrop-blur-xl rounded-xl p-8 border border-slate-700/50 shadow-2xl w-full max-w-sm">
-      <div className="text-center mb-8">
-        <div className="flex items-center justify-center mb-4">
-          <Trophy className="w-6 h-6 text-amber-400 mr-2" />
-          <h2 className="text-2xl font-bold text-white tracking-tight">Leaderboard</h2>
-          <Trophy className="w-6 h-6 text-amber-400 ml-2" />
-        </div>
-        <p className="text-slate-400 text-sm font-medium uppercase tracking-wide">Top Smashers</p>
+    <div className="bg-neutral-900/50 backdrop-blur-md border border-neutral-800/60 p-10 w-full max-w-sm">
+      <div className="text-center mb-10">
+        <h2 className="text-xl font-light text-white tracking-tight">Leaderboard</h2>
+        <div className="w-12 h-px bg-neutral-700 mt-3 mx-auto"></div>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-2">
         {entries.length === 0 ? (
           <div className="text-center py-8">
-            <Star className="w-12 h-12 text-slate-600 mx-auto mb-4 fill-slate-600" />
-            <p className="text-slate-400 font-medium">No players yet</p>
-            <p className="text-slate-500 text-sm">Be the first to smash!</p>
+            <Star className="w-10 h-10 text-neutral-700 mx-auto mb-3" />
+            <p className="text-neutral-400 font-light">No players yet</p>
+            <p className="text-neutral-500 text-xs font-light">Be the first to smash!</p>
           </div>
         ) : (
           entries.map((entry) => {
@@ -78,24 +74,24 @@ export function Leaderboard({ entries, currentPlayer, isLoading }: LeaderboardPr
 
             return (
               <div key={entry.player} className={getRankStyle(entry.rank, isCurrentPlayer)}>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-3">
                   <div className="flex-shrink-0">{getRankIcon(entry.rank)}</div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center space-x-2">
-                      <p className={`font-semibold truncate text-sm ${isCurrentPlayer ? "text-purple-200" : "text-slate-100"}`}>
+                      <p className={`font-light truncate text-sm ${isCurrentPlayer ? "text-neutral-200" : "text-neutral-300"}`}>
                         {entry.player.slice(0, 6)}...{entry.player.slice(-4)}
                       </p>
                       {isCurrentPlayer && (
-                        <span className="text-xs bg-purple-500 text-slate-100 px-2.5 py-1 rounded-full font-bold uppercase tracking-wide">
+                        <span className="text-xs bg-neutral-700 text-neutral-100 px-2 py-0.5 font-light uppercase tracking-widest">
                           You
                         </span>
                       )}
                     </div>
-                    <p className="text-slate-400 text-xs mt-1">{entry.games} games</p>
+                    <p className="text-neutral-500 text-xs mt-1 font-light">{entry.games}g</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className={`text-lg font-black font-mono ${isCurrentPlayer ? "text-purple-200" : "text-slate-100"}`}>
+                  <div className={`text-base font-light font-mono ${isCurrentPlayer ? "text-neutral-200" : "text-neutral-300"}`}>
                     {entry.score.toLocaleString()}
                   </div>
                 </div>
@@ -106,8 +102,8 @@ export function Leaderboard({ entries, currentPlayer, isLoading }: LeaderboardPr
       </div>
 
       {entries.length > 0 && (
-        <div className="mt-6 pt-6 border-t border-slate-700/40">
-          <p className="text-center text-slate-400 text-sm font-medium">Keep smashing to climb higher! 🚀</p>
+        <div className="mt-8 pt-6 border-t border-neutral-700/40">
+          <p className="text-center text-neutral-500 text-xs font-light">Keep climbing the ranks</p>
         </div>
       )}
     </div>
