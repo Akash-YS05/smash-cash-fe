@@ -44,13 +44,13 @@ export function TapButton({ onTap, disabled, score, isPlaying }: TapButtonProps)
         onClick={handleTap}
         disabled={disabled}
         className={`
-          relative overflow-hidden w-48 h-48 rounded-full font-black text-2xl transition-all duration-200 transform shadow-2xl
+          relative overflow-hidden w-52 h-52 rounded-full font-black text-2xl transition-all duration-200 transform shadow-2xl border-2
           ${
             disabled
-              ? "bg-gray-600 text-gray-400 cursor-not-allowed"
+              ? "bg-slate-700 text-slate-400 cursor-not-allowed border-slate-600"
               : isPlaying
-                ? "bg-gradient-to-br from-emerald-400 via-teal-400 to-cyan-400 text-white hover:scale-110 active:scale-95 shadow-emerald-500/50 hover:shadow-emerald-400/60"
-                : "bg-gradient-to-br from-gray-500 to-gray-600 text-gray-300 cursor-not-allowed"
+                ? "bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white hover:scale-110 active:scale-95 shadow-purple-600/50 hover:shadow-purple-500/70 border-purple-400/30 hover:border-purple-300/50"
+                : "bg-gradient-to-br from-slate-600 to-slate-700 text-slate-300 cursor-not-allowed border-slate-500"
           }
           ${isPressed ? "scale-95" : ""}
         `}
@@ -59,7 +59,7 @@ export function TapButton({ onTap, disabled, score, isPlaying }: TapButtonProps)
         {ripples.map((ripple) => (
           <span
             key={ripple.id}
-            className="absolute bg-white/30 rounded-full animate-ping"
+            className="absolute bg-white/40 rounded-full animate-ping"
             style={{
               left: ripple.x - 10,
               top: ripple.y - 10,
@@ -73,28 +73,28 @@ export function TapButton({ onTap, disabled, score, isPlaying }: TapButtonProps)
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
           {isPlaying ? (
             <>
-              <Zap className="w-12 h-12 mb-2 animate-bounce" />
-              <span>SMASH!</span>
+              <Zap className="w-14 h-14 mb-2 animate-bounce text-amber-200" />
+              <span className="text-xl tracking-widest">SMASH</span>
             </>
           ) : (
             <>
-              <div className="w-12 h-12 mb-2 rounded-full bg-gray-500 flex items-center justify-center">
+              <div className="w-12 h-12 mb-2 rounded-full bg-slate-600 flex items-center justify-center">
                 <Zap className="w-6 h-6" />
               </div>
-              <span>TAP</span>
+              <span className="text-lg tracking-wide">TAP</span>
             </>
           )}
         </div>
 
         {/* Glow effect when playing */}
         {isPlaying && (
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 blur-xl animate-pulse"></div>
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400/30 to-purple-600/20 blur-xl animate-pulse"></div>
         )}
       </button>
 
       {/* Score popup animation */}
       {isPressed && isPlaying && (
-        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-emerald-400 font-bold text-xl animate-bounce pointer-events-none">
+        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-amber-300 font-black text-2xl animate-bounce pointer-events-none font-mono">
           +1
         </div>
       )}
