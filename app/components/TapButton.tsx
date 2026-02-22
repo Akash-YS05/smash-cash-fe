@@ -50,7 +50,7 @@ export function TapButton({ onTap, disabled, score, isPlaying }: TapButtonProps)
               ? "bg-neutral-800 text-neutral-500 cursor-not-allowed border-neutral-700"
               : isPlaying
                 ? "bg-neutral-900 text-white hover:bg-neutral-800 active:scale-95 border-neutral-600 hover:border-neutral-500"
-                : "bg-neutral-850 text-neutral-600 cursor-not-allowed border-neutral-700"
+                : "bg-neutral-800 text-neutral-600 cursor-not-allowed border-neutral-700"
           }
           ${isPressed ? "scale-95" : ""}
         `}
