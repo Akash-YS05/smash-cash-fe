@@ -1,29 +1,8 @@
 @import "tailwindcss";
 
-:root {
-  /* Luxury Color Palette */
-  --background: #0d0d0d;
-  --surface-primary: #1a1a1a;
-  --surface-secondary: #242424;
-  --foreground: #f9f9f9;
-  --text-secondary: #a0a0a0;
-  --accent-cream: #e8e4dc;
-  --accent-gold: #b8860b;
-  --accent-silver: #c0c0c0;
-  
-  /* Semantic Tokens */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--accent-cream);
-  --color-accent: var(--accent-gold);
-  --color-secondary: var(--accent-silver);
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-background: #0d0d0d;
+  --color-foreground: #f9f9f9;
 }
 
 body {
